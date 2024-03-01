@@ -37,9 +37,14 @@ class Profile extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/image/profilee.png')),
+                   CircleAvatar(
+                    radius: 50,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white , width: 5)
+                      ),
+                      child: Image.asset('assets/image/profilee.png'),
+                    ),),
                   const SizedBox(
                     height: 20,
                   ),
@@ -51,14 +56,12 @@ class Profile extends StatelessWidget {
                   Text(
                     '${sharedPreferences!.getString('useremail')}',
                     style: const TextStyle(
-                      fontSize: 14,
                       color: Colors.grey
                     ),
                   ),
                   Text(
                     'You joined ${Services.calculateMembershipDuration(DateTime.parse(sharedPreferences!.getString('userjoinedat')!))} ago',
                     style: const TextStyle(
-                      fontSize: 14,
                       color: Colors.grey
                     ),
                   ),
@@ -68,8 +71,11 @@ class Profile extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
+                   style: const ButtonStyle(
+                          elevation: MaterialStatePropertyAll(10),
+                        ) ,
                     onPressed: () {
-                      Get.off(Home());
+                      Get.off(const Home());
                       sharedPreferences!.clear();
                     }, child: const Text('Logout')),
               )

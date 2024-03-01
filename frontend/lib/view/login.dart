@@ -51,7 +51,7 @@ class Login extends StatelessWidget {
                     ).animate().slideX(begin: -3 , end: 0 , duration: Duration(milliseconds: 500) , curve: Curves.easeIn),
                                  ),
                  ),
-                SizedBox(height: 60,),
+                SizedBox(height: 10,),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
@@ -59,6 +59,7 @@ class Login extends StatelessWidget {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500 , color: Colors.grey),
                   ),
                 ),
+                SizedBox(height: 40,),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -148,7 +149,9 @@ class Login extends StatelessWidget {
                             },
                           );
                         }
-                      },
+                      }, style: ButtonStyle(
+                          elevation: MaterialStatePropertyAll(10),
+                        ) ,
                       child: const Text(
                         'Login',
                         style: TextStyle(color: Colors.indigo),

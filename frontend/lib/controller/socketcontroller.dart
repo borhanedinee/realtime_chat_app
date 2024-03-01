@@ -59,7 +59,7 @@ class SocketController extends GetxController {
 
 
   void connectToServer() {
-    socket = IO.io('http://192.168.249.217:3000', <String, dynamic>{
+    socket = IO.io('http://10.0.2.2:3000', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });

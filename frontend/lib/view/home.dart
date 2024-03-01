@@ -84,6 +84,9 @@ class _HomeState extends State<Home> {
                               color: Colors.indigo,
                               fontWeight: FontWeight.w900),
                         ),
+                         style: ButtonStyle(
+                          elevation: MaterialStatePropertyAll(10),
+                        ) ,
                       ),
                     ),
                   ),
@@ -95,6 +98,9 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Get.to(const Signup());
                         },
+                        style: ButtonStyle(
+                          elevation: MaterialStatePropertyAll(10),
+                        ) ,
                         child: const Text(
                           'Sign up',
                           style: TextStyle(

@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 
 class OnlineAvatar extends StatelessWidget {
   final String imageUrl;
   final bool isOnline;
 
-  OnlineAvatar({
+  const OnlineAvatar({
+    super.key,
     required this.imageUrl,
     required this.isOnline,
   });

@@ -43,23 +43,34 @@ class _SignupState extends State<Signup> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 30,),
-               Center(
-                child: Text(
+              const SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: const Text(
                   'Join us now !',
                   style: TextStyle(
                       color: Colors.indigo,
                       fontWeight: FontWeight.bold,
                       fontSize: 55),
-                ).animate().slideX(begin: -3 , end: 0 , duration: Duration(milliseconds: 500) , curve: Curves.easeIn),
+                ).animate().slideX(
+                    begin: -3,
+                    end: 0,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn),
               ),
-              SizedBox(height: 60,),
+              const SizedBox(
+                height: 10,
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Fill your information in the boxes bellow.',
-                  style: TextStyle(fontSize: 16 , color: Colors.grey),
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
+              ),
+              const SizedBox(
+                height: 40,
               ),
               Padding(
                 padding:
@@ -160,9 +171,11 @@ class _SignupState extends State<Signup> {
                                   socketController.updateShowPasswordState();
                                   socketController.update();
                                 },
-                                icon: Icon(socketController.showPassword
-                                    ? Icons.visibility
-                                    : Icons.visibility_off  , color: Colors.grey))),
+                                icon: Icon(
+                                    socketController.showPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Colors.grey))),
                         controller:
                             socketController.signUpPasswordController.value,
                       ),
@@ -179,6 +192,9 @@ class _SignupState extends State<Signup> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
+                    style: const ButtonStyle(
+                      elevation: MaterialStatePropertyAll(10),
+                    ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         socketController.signup({
@@ -195,7 +211,7 @@ class _SignupState extends State<Signup> {
                         socketController.checksignup();
 
                         Future.delayed(
-                          Duration(milliseconds: 300),
+                          const Duration(milliseconds: 300),
                           () {
                             socketController.firstnameController.value.clear();
                             socketController.secondnameController.value.clear();
@@ -207,7 +223,6 @@ class _SignupState extends State<Signup> {
                         );
                       }
                     },
-                    style: const ButtonStyle(),
                     child: const Text(
                       'Signup',
                       style: TextStyle(color: Colors.indigo),

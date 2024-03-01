@@ -50,7 +50,9 @@ class _ConversationState extends State<Conversation> {
                                 style: const TextStyle(
                                     fontSize: 24, fontWeight: FontWeight.bold , color: Colors.grey),
                               ),
-                              Text('${controller.userToText!.userFirstName} joined ${Services.calculateMembershipDuration(controller.userToText!.userCreatedAt)} ago'),
+                              Text('${controller.userToText!.userFirstName} joined ${Services.calculateMembershipDuration(controller.userToText!.userCreatedAt)} ago.' , style: TextStyle(
+                                color: Colors.grey
+                              ),),
                             ],
                           ),
                         )
