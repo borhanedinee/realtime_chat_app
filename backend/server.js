@@ -52,7 +52,6 @@ io.on('connection', (socket) => {
     // Function to remove disconnected user from active users list
     function removeUserFromActiveUsers(socketID) {
         user_socket.forEach((value, key) => {
-            console.log('you are here ');
             console.log(value + '    ' + key);
             if (value === socketID) {
                 for (let i = 0; i < active_users.length; i++) {
@@ -350,6 +349,8 @@ function FetchChatsToHomePage(akhna, socket) {
         socket.emit('chats', result);
     });
 }
+
+
 function FetchChatsToHomePageToReciever(akhna, socket, socketToText) {
     let fetchChatsSql = `SELECT 
                     C.id,
