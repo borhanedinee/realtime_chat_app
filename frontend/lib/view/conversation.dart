@@ -1,7 +1,7 @@
 
 import 'package:chat/controller/socketcontroller.dart';
 import 'package:chat/main.dart';
-import 'package:chat/services/srvices.dart';
+import 'package:chat/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

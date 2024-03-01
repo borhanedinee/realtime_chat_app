@@ -1,5 +1,5 @@
 
-import 'package:chat/services/srvices.dart';
+import 'package:chat/services/services.dart';
 import 'package:chat/view/home.dart';
 import 'package:chat/main.dart';
 import 'package:flutter/material.dart';
