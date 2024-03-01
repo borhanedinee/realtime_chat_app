@@ -1,4 +1,4 @@
-# Your App Name
+# Realtime Chat App
 
 This chatapp is a Flutter application that utilizes GetX for state management, with a Node.js backend and Socket.IO for real-time event handling.
 
