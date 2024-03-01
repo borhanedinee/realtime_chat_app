@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
                 height: 10,
               ),
                Center(
-                child: Text(
+                child: const Text(
                   'Welcome !',
                   style: TextStyle(
                       color: Colors.indigo,
@@ -63,18 +63,8 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 30,
               ),
-               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: const Text(
-                  'Start your very first legendary conversations with your lovers. ',
-                  style: TextStyle(
-
-                    fontSize: 16, color: Colors.grey
-                  ),
-                ).animate().fade(duration: const Duration(milliseconds: 700)).slideX(begin: -3  , end: 0),
-              ),
               const SizedBox(
-                height: 70,
+                height: 100,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -115,7 +105,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ],
-              ).animate().slide(begin: const Offset(0, 1) , end: const Offset(0, 0) , curve: Curves.easeIn , duration: const Duration(milliseconds: 700)),
+              ).animate().slide(begin: const Offset(0, 2) , end: const Offset(0, 0) , curve: Curves.easeIn , duration: const Duration(milliseconds: 700)),
             ],
           ),
         ),
