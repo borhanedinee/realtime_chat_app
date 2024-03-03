@@ -95,12 +95,13 @@ class SocketController extends GetxController {
       (data) {
         activeUsers.clear();
         for (var element in data) {
-          if (element['user_id'] != sharedPreferences?.getInt('userid')) {
+          if (element['user_id'] != sharedPreferences!.getInt('userid')) {
             activeUsers.add(User.fromJson(element));
           }
         }
-        for (var element in activeUsers) {
-          activeIDS.add(element.userId);
+        activeIDS.clear();
+        for (var element2 in activeUsers) {
+          activeIDS.add(element2.userId);
         }
         update();
       },
@@ -108,13 +109,11 @@ class SocketController extends GetxController {
 
     socket.on('chats', (data) {
       chats.clear();
-      List<Chat> cc = [];
       for (var element in data) {
         if (sharedPreferences!.getInt('userid') != element['user_id']) {
-          cc.add(Chat.fromJson(element));
+          chats.add(Chat.fromJson(element));
         }
       }
-      chats = cc.reversed.toList();
       update();
     });
 
@@ -177,14 +176,12 @@ class SocketController extends GetxController {
 
     socket.on('updateChatsListNow', (data) {
       chats.clear();
-      List<Chat> cc = [];
       for (var element in data) {
         if (sharedPreferences!.getInt('userid') != element['user_id']) {
           
-          cc.add(Chat.fromJson(element));
+          chats.add(Chat.fromJson(element));
         }
       }
-      chats = cc.reversed.toList();
       update();
     });
   }

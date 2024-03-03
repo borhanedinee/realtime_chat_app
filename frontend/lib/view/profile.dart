@@ -1,4 +1,5 @@
 
+import 'package:chat/controller/socketcontroller.dart';
 import 'package:chat/services/services.dart';
 import 'package:chat/view/home.dart';
 import 'package:chat/main.dart';
@@ -30,21 +31,21 @@ class Profile extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 0.5,
         decoration: const BoxDecoration(),
-        child: Padding(
+        child:  Padding(
           padding: const EdgeInsets.symmetric(vertical: 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
-                   CircleAvatar(
-                    radius: 50,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white , width: 5)
-                      ),
-                      child: Image.asset('assets/image/profilee.png'),
-                    ),),
+                   const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 55,
+                     child: CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage('assets/image/profilee.png'),
+                     ),
+                   ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -67,17 +68,20 @@ class Profile extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                   style: const ButtonStyle(
-                          elevation: MaterialStatePropertyAll(10),
-                        ) ,
-                    onPressed: () {
-                      Get.off(const Home());
-                      sharedPreferences!.clear();
-                    }, child: const Text('Logout')),
+              GetBuilder<SocketController>(
+                builder: (controller) =>  Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                     style: const ButtonStyle(
+                            elevation: MaterialStatePropertyAll(10),
+                          ) ,
+                      onPressed: () {
+                        controller.logout();
+                        Get.off(const Home());
+                        sharedPreferences!.clear();
+                      }, child: const Text('Logout')),
+                ),
               )
             ],
           ),
