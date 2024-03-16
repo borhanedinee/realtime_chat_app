@@ -6,7 +6,7 @@ This chatapp is a Flutter application that utilizes GetX for state management an
 
 - **Real-time User Activity Tracking:** Track user login/logout events in real-time.
 - **User Typing Detection:** Detect whether a user is currently typing .
-- 
+
 ## Technologies Used
 
 - Flutter
